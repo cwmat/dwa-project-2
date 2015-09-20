@@ -4,6 +4,8 @@
 $min_words = 4;
 $add_num = False;
 $add_char = False;
+$case_opt = "lowercase";
+$separator = "-";
 
 // Pages to scrape for words - Removed due to slow load time
 // $pages = Array(
@@ -25,6 +27,8 @@ function unpack_post() {
   global $min_words;
   global $add_num;
   global $add_char;
+  global $case_opt;
+  global $separator;
 
   if (array_key_exists('min-words', $_POST)) {
     $min_words = $_POST['min-words'];
@@ -40,7 +44,16 @@ function unpack_post() {
     $add_char = True;
   }
 
-  return [$min_words, (int)$add_num, (int)$add_char];
+  if (array_key_exists('separator', $_POST)) {
+    $separator = $_POST['separator'];
+  }
+
+  if (array_key_exists('case-opt', $_POST)) {
+    $case_opt = $_POST['case-opt'];
+  }
+
+  // Mostly just for testing
+  return [$min_words, (int)$add_num, (int)$add_char, $separator, $case_opt];
 }
 
 /**
@@ -75,7 +88,7 @@ function get_words_list($pages) {
  */
 function add_number($in_array) {
   $random_num = rand(1, 9);
-  $random_idx = rand(0, count($in_array));
+  $random_idx = rand(0, count($in_array) - 1);
 
   $in_array[$random_idx] = $in_array[$random_idx] . $random_num;
 
@@ -88,12 +101,28 @@ function add_number($in_array) {
  */
 function add_char($in_array) {
   $special_chars = ["!", "@", "#", "$", "%", "^", "&", "*"];
-  $random_char = $special_chars[rand(0, count($special_chars))];
-  $random_idx = rand(0, count($in_array));
+  $random_char = $special_chars[rand(0, count($special_chars) - 1)];
+  $random_idx = rand(0, count($in_array) - 1);
 
   $in_array[$random_idx] = $in_array[$random_idx] . $random_char;
 
   return $in_array;
+}
+
+/**
+ * Convert the in_array elements to the specified case
+ *
+ * @param case - The desired case for all array elements (all lower or all upper))
+ * @param in_array - The input array that the case change should occur on
+ */
+function handle_case($case, &$in_array) {
+  foreach ($in_array as &$value) {
+    if ($case == "uppercase") {
+      $value = strtoupper($value);
+    } else {
+      $value = strtolower($value);
+    }
+  }
 }
 
 /**
@@ -105,6 +134,8 @@ function get_xkcd_password() {
   global $min_words;
   global $add_num;
   global $add_char;
+  global $case_opt;
+  global $separator;
   global $pages;
 
   unpack_post();
@@ -112,7 +143,7 @@ function get_xkcd_password() {
   $xkcd_password = Array();
 
   for ($i = 1; $i <= $min_words; $i++) {
-    $temp_rand_idx = rand(0, count($words_list));
+    $temp_rand_idx = rand(0, count($words_list) - 1);
     array_push($xkcd_password, trim($words_list[$temp_rand_idx]));
     unset($words_list[$temp_rand_idx]);
   }
@@ -128,7 +159,10 @@ function get_xkcd_password() {
     $xkcd_password = add_char($xkcd_password);
   }
 
-  return implode("-", $xkcd_password);
+  // Check case
+  handle_case($case_opt, $xkcd_password);
+
+  return implode($separator, $xkcd_password);
  }
 
  // echo get_xkcd_password();

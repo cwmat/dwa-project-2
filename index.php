@@ -17,7 +17,7 @@
     Random Words:
       http://listofrandomwords.com/index.cfm?blist
         and
-      http://www.paulnoll.com/Books/Clear-English.html
+      http://www.paulnoll.com/Books/Clear-English/words-01-02-hundred.html
 
   -->
 
@@ -63,49 +63,95 @@
           <input
             class="pure-input-1 pure-input-rounded"
             type="text"
+            readonly
             placeholder="Temp"
-            value=<?php echo get_xkcd_password(); ?> readonly
-            ><br>
+            value=<?php echo get_xkcd_password();?>>
         </form>
       </div>
     </div>
+  </div> <!-- ahhhhhhh -->
 
     <!-- Options -->
+    <div class="pure-g wrapper is-center"> <!-- AHHHHHHH -->
     <div class="pure-u-1 options-section">
       <h1 class="content-head">Options</h1>
     </div>
-    <div class="pure-u-1 pure-u-md-1-2 options-section">
-      <form class="pure-form pure-form-aligned" method="POST" action="index.php">
-        <fieldset>
+    <div class="pure-u-1 options-section">
+      <form
+      class="pure-form pure-form-stacked"
+      method="POST"
+      action="index.php">
+          <fieldset>
+              <div class="pure-g">
+                  <div class="pure-u-1 pure-u-md-1-3">
+                    <label for="min-words">Number of words</label>
+                    <select id="min-words" class="pure-input-1-2" data-option="min-words" name="min-words">
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4" selected="selected">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
 
-          <div class="pure-u-1">
-            <label for="min-words">Number of words</label>
-            <select id="min-words" class="pure-input-1-2" data-option="min-words" name="min-words">
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4" selected="selected">4</option>
-              <option value="5">5</option>
-            </select>
-          </div>
+                  <div class="pure-u-1 pure-u-md-1-3">
+                      <!-- <label for="last-name">Last Name</label>
+                      <input id="last-name" class="pure-u-23-24" type="text"> -->
+                  </div>
 
-          <div class="pure-u-1">
-            <label for="add-num" class="pure-checkbox">
-              Add a number? <input id="add-num" type="checkbox" name="add-num" data-option="add-num">
-            </label>
-          </div>
+                  <div class="pure-u-1 pure-u-md-1-3">
+                    <label for="case-opt">Case</label>
+                    <select id="case-opt" class="pure-input-1-2" data-option="case-opt" name="case-opt">
+                      <option value="lowercase" selected="selected">All lowercase</option>
+                      <option value="uppercase">All uppercase</option>
+                    </select>
+                  </div>
 
-          <div class="pure-u-1">
-            <label for="add-char" class="pure-checkbox">
-              Add Special characters? <input id="add-char" type="checkbox" name="add-char" data-option="add-char">
-            </label>
-          </div>
+                  <div class="pure-u-1 pure-u-md-1-3">
+                    <label for="add-num" class="pure-checkbox">
+                      Add a number? <input id="add-num" type="checkbox" name="add-num" data-option="add-num">
+                    </label>
+                  </div>
 
-          <input type='submit' value='Pick a winner!'>
+                  <div class="pure-u-1 pure-u-md-1-3">
+                      <!-- <label for="state">State</label>
+                      <select id="state" class="pure-input-1-2">
+                          <option>AL</option>
+                          <option>CA</option>
+                          <option>IL</option>
+                      </select> -->
+                  </div>
 
-        </fieldset>
+                  <div class="pure-u-1 pure-u-md-1-3">
+                      <label for="separator">Separator</label>
+                      <input
+                      id="separator"
+                      class="pure-u-23-24"
+                      type="separator"
+                      name="separator"
+                      data-option="separator"
+                      value="-"
+                      maxlength="1"
+                      size="4">
+                  </div>
+
+                  <div class="pure-u-1 pure-u-md-1-3">
+                    <label for="add-char" class="pure-checkbox">
+                      Add Special characters? <input id="add-char" type="checkbox" name="add-char" data-option="add-char">
+                    </label>
+                  </div>
+              </div>
+
+              <!-- <label for="terms" class="pure-checkbox">
+                  <input id="terms" type="checkbox"> I've read the terms and conditions
+              </label> -->
+              <div class="pure-u-1 is-center">
+              <button type="submit" class="pure-button pure-button-primary">GENERATE</button>
+              </div>
+          </fieldset>
       </form>
     </div>
-    <div class="pure-u-1 pure-u-md-1-2 options-section">
+  </div> <!-- AHHHHHHHH -->
+    <!-- <div class="pure-u-1 pure-u-md-1-2 options-section">
       <form class="pure-form pure-form-aligned">
         <fieldset>
           <div class="pure-control-group">
@@ -134,21 +180,43 @@
             </label>
           </div>
         </fieldset>
-      </form>
-    </div>
+      </form> -->
+    <!-- </div> AHHHHHHHHHHHHHHHHH-->
 
+    <div class="pure-g wrapper is-center"> <!-- AHHHHHHH -->
     <div class="pure-u-1 submit-section">
-      <h1 class="content-head">Submit</h1>
+      <h1 class="content-head">The Back Story</h1>
+      <p>
+        xkcd, the self proclaimed "webcomic of romance, sarcasm, math, and language", produced a comic strip questioning the modern trend of password complexity titled “Password Strength”.  Their opinion is that there is a threshold at which the 'entropic' value (the level of randomness that would create difficulty for brute force password guessing) of a password gets overshadowed by its ability to actually be remembered by the user.  They go further to propose a strategy that provides both a higher value of entropy and an easier means by which to remember said password.
+      </p>
+      <p>
+        The example that the comic presents to showcase their theory consists of a complex string of alphanumeric characters, “Tr0ub4dor83”, contrasted with a seemingly ridiculous statement, “correct horse battery staple”.  The logic is that the alphanumeric mashup password, given its shorter length, provides a much easier password for a brute force algorithm to guess versus the longer “semi-ridiculous” and multi-word password.  Based on their calculation, even without the random numbers/special characters, the longer password construct provides a much greater level of protection while also allowing for easier remembrance by simply creating an image in your mind of the phrase.  Their estimate depicts a brute force algorithm of 1,000 guess/second taking about 550 years to guess the longer easier-to-remember password, while at the same guesses/second, the shorter more complex password could potentially be cracked in about three days.
+      </p>
+      <p>
+        Check out the comic to see for yourself and have fun playing around with this password generator inspired by the comic!
+      </p>
     </div>
+    </div> <!-- AHHHHHHH -->
 
   <!-- End wrapper -->
   </div>
 
-  <div class="pure-g is-center">
-    <footer class="pure-u-1">
-      <h1>Footer</h1>
+  <!-- <div class="pure-g is-center"> -->
+    <footer class="pure-g is-center">
+      <div class="pure-u-1">
+        <h4>Check out these cool sites that inspired/supported this project!</h4>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-3">
+        <a href="http://listofrandomwords.com/index.cfm?blist" target="_blank">Random Words!</a>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-3">
+        <a href="http://www.paulnoll.com/Books/Clear-English/words-01-02-hundred.html" target="_blank">More Random Words</a>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-3">
+        <a href="https://xkcd.com/936/" target="_blank">xkcd Comic Strip</a>
+      </div>
     </footer>
-  </div>
+  <!-- </div> -->
 
 
   <!-- Import JS May add JS features in the future -->

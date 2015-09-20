@@ -39,7 +39,7 @@ header h1 {
 .results-section {
   /*margin: 3em;*/
   background-color: white;
-  /*background-image: url(../img/hero.jpg);*/
+  background-image: url(../img/hero.jpg);
   background-size: cover;
 }
 
@@ -72,9 +72,23 @@ header h1 {
   background-color: #d4eef3;
 }
 
-.options-section input {
-  margin: 0 auto;
+.options-section form {
+  margin-bottom: 2em;
+}
 
+.options-section .pure-form-stacked input,
+.options-section .pure-form-stacked select {
+  /*margin: 0 auto;*/
+  border-color: #ccc;
+}
+
+.options-section .pure-form-stacked input:focus,
+.options-section .pure-form-stacked select:focus {
+  border-color: #ff7f7f;
+}
+
+.options-section .pure-form-stacked input {
+  width: 2em;
 }
 
 .options-section fieldset {
@@ -82,8 +96,38 @@ header h1 {
   text-align: left;
 }
 
+.options-section .pure-form-stacked button {
+  width: 10em;
+  height: 3em;
+  background-color: #ff7f7f;
+}
+
+.options-section .pure-form-stacked button:hover {
+  background-color: black;
+}
+
 .submit-section {
-  background-color: #bed8db;
+  background-color: white;
+}
+
+.submit-section p {
+  max-width:60em;
+  margin: 1em auto;
+  text-align: left;
+  font-family: verdana, sans-serif;
+  font-size: 14px;
+  color: #000000;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  letter-spacing: 0.2px;
+  line-height: 25px;
+}
+
+@media screen and (max-width: 60em) {
+  .submit-section p {
+    margin: 1em;
+  }
 }
 
 .wrapper {
@@ -93,6 +137,7 @@ header h1 {
 footer {
   background-color: #3e3e3e;
   color: white;
+  padding-bottom: 1em;
 }
 
 .content-head {
@@ -104,4 +149,25 @@ footer {
 
 .content {
   margin: 5em 0;
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: #bed8db;
+}
+
+a:visited {
+  color: #bed8db;
+}
+
+a:hover {
+  color: #ff7f7f;
+}
+
+a:active {
+  color: #3e3e3e;
 }
