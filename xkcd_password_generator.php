@@ -5,6 +5,17 @@ $min_words = 4;
 $add_num = False;
 $add_char = False;
 
+// Pages to scrape for words - Removed due to slow load time
+// $pages = Array(
+//   "http://www.paulnoll.com/Books/Clear-English/words-29-30-hundred.html",
+//   "http://www.paulnoll.com/Books/Clear-English/words-03-04-hundred.html",
+//   "http://www.paulnoll.com/Books/Clear-English/words-01-02-hundred.html",
+// );
+
+$pages = Array(
+  "words.txt",
+);
+
 /**
  * Unpack values from POST array
  *
@@ -35,17 +46,11 @@ function unpack_post() {
 /**
  * Populate an array of words
  *
+ * @param pages - an array of web pages to scrape for words
  */
-function get_words_list() {
+function get_words_list($pages) {
   $output = Array();
   $parsed_output = Array();
-
-  // Pages to scrape for words
-  $pages = Array(
-    "http://www.paulnoll.com/Books/Clear-English/words-29-30-hundred.html",
-    "http://www.paulnoll.com/Books/Clear-English/words-03-04-hundred.html",
-    "http://www.paulnoll.com/Books/Clear-English/words-01-02-hundred.html",
-  );
 
   // Scrape web pages
   foreach($pages as $page) {
@@ -64,7 +69,69 @@ function get_words_list() {
   return $parsed_output;
 }
 
-get_words_list();
+/**
+ * Add a random number to a random array index
+ *
+ */
+function add_number($in_array) {
+  $random_num = rand(1, 9);
+  $random_idx = rand(0, count($in_array));
+
+  $in_array[$random_idx] = $in_array[$random_idx] . $random_num;
+
+  return $in_array;
+}
+
+/**
+ * Add a random number to a random array index
+ *
+ */
+function add_char($in_array) {
+  $special_chars = ["!", "@", "#", "$", "%", "^", "&", "*"];
+  $random_char = $special_chars[rand(0, count($special_chars))];
+  $random_idx = rand(0, count($in_array));
+
+  $in_array[$random_idx] = $in_array[$random_idx] . $random_char;
+
+  return $in_array;
+}
+
+/**
+ * Get a ranomized password
+ *
+ */
+function get_xkcd_password() {
+  // Globals
+  global $min_words;
+  global $add_num;
+  global $add_char;
+  global $pages;
+
+  unpack_post();
+  $words_list = get_words_list($pages);
+  $xkcd_password = Array();
+
+  for ($i = 1; $i <= $min_words; $i++) {
+    $temp_rand_idx = rand(0, count($words_list));
+    array_push($xkcd_password, trim($words_list[$temp_rand_idx]));
+    unset($words_list[$temp_rand_idx]);
+  }
+
+  // Check special conditions
+  // Check add num
+  if ($add_num) {
+    $xkcd_password = add_number($xkcd_password);
+  }
+
+  // Check add special character
+  if ($add_char) {
+    $xkcd_password = add_char($xkcd_password);
+  }
+
+  return implode("-", $xkcd_password);
+ }
+
+ // echo get_xkcd_password();
 
 
 

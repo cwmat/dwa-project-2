@@ -12,11 +12,12 @@
 
     Pure CSS: http://purecss.io/
 
-    Icons: http://fortawesome.github.io/Font-Awesome/
-
     Open source images: https://unsplash.com/
 
-    Comical filler text: http://www.cheeseipsum.co.uk/
+    Random Words:
+      http://listofrandomwords.com/index.cfm?blist
+        and
+      http://www.paulnoll.com/Books/Clear-English.html
 
   -->
 
@@ -28,7 +29,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
@@ -64,7 +64,7 @@
             class="pure-input-1 pure-input-rounded"
             type="text"
             placeholder="Temp"
-            value="The values!" readonly
+            value=<?php echo get_xkcd_password(); ?> readonly
             ><br>
         </form>
       </div>
@@ -83,7 +83,7 @@
             <select id="min-words" class="pure-input-1-2" data-option="min-words" name="min-words">
               <option value="2">2</option>
               <option value="3">3</option>
-              <option value="4">4</option>
+              <option value="4" selected="selected">4</option>
               <option value="5">5</option>
             </select>
           </div>
@@ -139,15 +139,6 @@
 
     <div class="pure-u-1 submit-section">
       <h1 class="content-head">Submit</h1>
-      <p>
-        <?php
-        // print_r(do_stuff());
-        // echo do_stuff();
-        // print_r($_POST);
-        print_r(unpack_post());
-        // print_r(get_words_list());
-        ?>
-      </p>
     </div>
 
   <!-- End wrapper -->
