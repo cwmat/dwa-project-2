@@ -37,12 +37,10 @@ header h1 {
 }
 
 .results-section {
-  /*margin: 3em;*/
   background-color: white;
-  background-image: url(../img/hero.jpg);
+  background-image: url(../img/tree_cliff.jpg);
   background-size: cover;
 }
-
 
 
 .results-section .pure-input-1 {
@@ -78,7 +76,6 @@ header h1 {
 
 .options-section .pure-form-stacked input,
 .options-section .pure-form-stacked select {
-  /*margin: 0 auto;*/
   border-color: #ccc;
 }
 

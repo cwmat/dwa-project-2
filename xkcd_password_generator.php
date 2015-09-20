@@ -1,4 +1,5 @@
 <?php
+
 // Options passed in from client
 // Defualt values
 $min_words = 4;
@@ -35,12 +36,10 @@ function unpack_post() {
   }
 
   if (array_key_exists('add-num', $_POST)) {
-    // $add_num = $_POST['add-num'];
     $add_num = True;
   }
 
   if (array_key_exists('add-char', $_POST)) {
-    // $add_char = $_POST['add-char'];
     $add_char = True;
   }
 
@@ -164,52 +163,5 @@ function get_xkcd_password() {
 
   return implode($separator, $xkcd_password);
  }
-
- // echo get_xkcd_password();
-
-
-
-
-
-
-
-//
-// function get_options() {
-//   // Globals
-//   global $min_words;
-//   global $add_num;
-//   global $add_char;
-//
-//   return [$min_words, $add_num, $add_char];
-// }
-
-// foreach($_POST as $key => $value) {
-//   if (array_key_exists('min_words', $_POST)) {
-//     $min_words = $_POST['min_words'];
-//   }
-//
-//   if (array_key_exists('add_num', $_POST)) {
-//     $add_num = $_POST['add_num'];
-//   }
-//
-//   if (array_key_exists('add_char', $_POST)) {
-//     $add_char = $_POST['add_char'];
-//   }
-// }
-
-// function do_stuff() {
-//   // return [$_POST["min_words"], $_POST["add_num"], $_POST["add_char"]];
-//   if (array_key_exists('min-words', $_POST)) {
-//     return $_POST['min-words'];
-//   }
-//   else {
-//     return "TEST";
-//   }
-// }
-
-
-
-
-
 
  ?>

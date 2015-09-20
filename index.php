@@ -69,10 +69,10 @@
         </form>
       </div>
     </div>
-  </div> <!-- ahhhhhhh -->
+  </div>
 
     <!-- Options -->
-    <div class="pure-g wrapper is-center"> <!-- AHHHHHHH -->
+    <div class="pure-g wrapper is-center">
     <div class="pure-u-1 options-section">
       <h1 class="content-head">Options</h1>
     </div>
@@ -81,109 +81,71 @@
       class="pure-form pure-form-stacked"
       method="POST"
       action="index.php">
-          <fieldset>
-              <div class="pure-g">
-                  <div class="pure-u-1 pure-u-md-1-3">
-                    <label for="min-words">Number of words</label>
-                    <select id="min-words" class="pure-input-1-2" data-option="min-words" name="min-words">
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4" selected="selected">4</option>
-                      <option value="5">5</option>
-                    </select>
-                  </div>
+        <fieldset>
+          <div class="pure-g">
 
-                  <div class="pure-u-1 pure-u-md-1-3">
-                      <!-- <label for="last-name">Last Name</label>
-                      <input id="last-name" class="pure-u-23-24" type="text"> -->
-                  </div>
-
-                  <div class="pure-u-1 pure-u-md-1-3">
-                    <label for="case-opt">Case</label>
-                    <select id="case-opt" class="pure-input-1-2" data-option="case-opt" name="case-opt">
-                      <option value="lowercase" selected="selected">All lowercase</option>
-                      <option value="uppercase">All uppercase</option>
-                    </select>
-                  </div>
-
-                  <div class="pure-u-1 pure-u-md-1-3">
-                    <label for="add-num" class="pure-checkbox">
-                      Add a number? <input id="add-num" type="checkbox" name="add-num" data-option="add-num">
-                    </label>
-                  </div>
-
-                  <div class="pure-u-1 pure-u-md-1-3">
-                      <!-- <label for="state">State</label>
-                      <select id="state" class="pure-input-1-2">
-                          <option>AL</option>
-                          <option>CA</option>
-                          <option>IL</option>
-                      </select> -->
-                  </div>
-
-                  <div class="pure-u-1 pure-u-md-1-3">
-                      <label for="separator">Separator</label>
-                      <input
-                      id="separator"
-                      class="pure-u-23-24"
-                      type="separator"
-                      name="separator"
-                      data-option="separator"
-                      value="-"
-                      maxlength="1"
-                      size="4">
-                  </div>
-
-                  <div class="pure-u-1 pure-u-md-1-3">
-                    <label for="add-char" class="pure-checkbox">
-                      Add Special characters? <input id="add-char" type="checkbox" name="add-char" data-option="add-char">
-                    </label>
-                  </div>
+              <div class="pure-u-1 pure-u-md-1-3">
+                <label for="min-words">Number of words</label>
+                <select id="min-words" class="pure-input-1-2" data-option="min-words" name="min-words">
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4" selected="selected">4</option>
+                  <option value="5">5</option>
+                </select>
               </div>
 
-              <!-- <label for="terms" class="pure-checkbox">
-                  <input id="terms" type="checkbox"> I've read the terms and conditions
-              </label> -->
-              <div class="pure-u-1 is-center">
-              <button type="submit" class="pure-button pure-button-primary">GENERATE</button>
+              <div class="pure-u-1 pure-u-md-1-3"></div>
+
+              <div class="pure-u-1 pure-u-md-1-3">
+                <label for="case-opt">Case</label>
+                <select id="case-opt" class="pure-input-1-2" data-option="case-opt" name="case-opt">
+                  <option value="lowercase" selected="selected">All lowercase</option>
+                  <option value="uppercase">All uppercase</option>
+                </select>
               </div>
-          </fieldset>
+
+              <div class="pure-u-1 pure-u-md-1-3">
+                <label for="add-num" class="pure-checkbox">
+                  Add a number? <input id="add-num" type="checkbox" name="add-num" data-option="add-num">
+                </label>
+              </div>
+
+              <div class="pure-u-1 pure-u-md-1-3"></div>
+
+              <div class="pure-u-1 pure-u-md-1-3">
+                <label for="separator">Separator</label>
+                <input
+                id="separator"
+                class="pure-u-23-24"
+                type="separator"
+                name="separator"
+                data-option="separator"
+                value="-"
+                maxlength="1"
+                size="4">
+              </div>
+
+              <div class="pure-u-1 pure-u-md-1-3">
+                <label for="add-char" class="pure-checkbox">
+                  Add Special characters? <input id="add-char" type="checkbox" name="add-char" data-option="add-char">
+                </label>
+              </div>
+
+          <div class="pure-u-1 is-center">
+            <button type="submit" class="pure-button pure-button-primary">GENERATE</button>
+          </div>
+
+        <!-- End sub grid -->
+        </div>
+
+        </fieldset>
       </form>
     </div>
-  </div> <!-- AHHHHHHHH -->
-    <!-- <div class="pure-u-1 pure-u-md-1-2 options-section">
-      <form class="pure-form pure-form-aligned">
-        <fieldset>
-          <div class="pure-control-group">
-            <label for="name">Username</label>
-            <input id="name" type="text" placeholder="Username">
-          </div>
 
-          <div class="pure-control-group">
-            <label for="password">Password</label>
-            <input id="password" type="password" placeholder="Password">
-          </div>
+  <!-- End main grid -->
+  </div>
 
-          <div class="pure-control-group">
-            <label for="email">Email Address</label>
-            <input id="email" type="email" placeholder="Email Address">
-          </div>
-
-          <div class="pure-control-group">
-            <label for="foo">Supercalifragilistic Label</label>
-            <input id="foo" type="text" placeholder="Enter something here...">
-          </div>
-
-          <div class="pure-controls">
-            <label for="cb" class="pure-checkbox">
-              <input id="cb" type="checkbox"> I've read the terms and conditions
-            </label>
-          </div>
-        </fieldset>
-      </form> -->
-    <!-- </div> AHHHHHHHHHHHHHHHHH-->
-
-    <div class="pure-g wrapper is-center"> <!-- AHHHHHHH -->
+  <div class="pure-g wrapper is-center">
     <div class="pure-u-1 submit-section">
       <h1 class="content-head">The Back Story</h1>
       <p>
@@ -196,28 +158,23 @@
         Check out the comic to see for yourself and have fun playing around with this password generator inspired by the comic!
       </p>
     </div>
-    </div> <!-- AHHHHHHH -->
-
-  <!-- End wrapper -->
   </div>
 
-  <!-- <div class="pure-g is-center"> -->
-    <footer class="pure-g is-center">
-      <div class="pure-u-1">
-        <h4>Check out these cool sites that inspired/supported this project!</h4>
-      </div>
-      <div class="pure-u-1 pure-u-md-1-3">
-        <a href="http://listofrandomwords.com/index.cfm?blist" target="_blank">Random Words!</a>
-      </div>
-      <div class="pure-u-1 pure-u-md-1-3">
-        <a href="http://www.paulnoll.com/Books/Clear-English/words-01-02-hundred.html" target="_blank">More Random Words</a>
-      </div>
-      <div class="pure-u-1 pure-u-md-1-3">
-        <a href="https://xkcd.com/936/" target="_blank">xkcd Comic Strip</a>
-      </div>
-    </footer>
-  <!-- </div> -->
-
+  <!-- Footer -->
+  <footer class="pure-g is-center">
+    <div class="pure-u-1">
+      <h4>Check out these cool sites that inspired/supported this project!</h4>
+    </div>
+    <div class="pure-u-1 pure-u-md-1-3">
+      <a href="http://listofrandomwords.com/index.cfm?blist" target="_blank">Random Words!</a>
+    </div>
+    <div class="pure-u-1 pure-u-md-1-3">
+      <a href="http://www.paulnoll.com/Books/Clear-English/words-01-02-hundred.html" target="_blank">More Random Words</a>
+    </div>
+    <div class="pure-u-1 pure-u-md-1-3">
+      <a href="https://xkcd.com/936/" target="_blank">xkcd Comic Strip</a>
+    </div>
+  </footer>
 
   <!-- Import JS May add JS features in the future -->
   <!-- <script src="js/vendor/jquery-1.11.3.min.js"></script>
